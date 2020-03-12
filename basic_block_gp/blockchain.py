@@ -31,7 +31,11 @@ class Blockchain(object):
         """
 
         block = {
-            # TODO
+            'index': len(self.chain) + 1,
+            'timestamp': time(),
+            'transactions': self.current_transactions,
+            'proof': proof,
+            'previous_block': previous_hash
         }
 
         # Reset the current list of transactions
@@ -128,6 +132,7 @@ def mine():
 def full_chain():
     response = {
         # TODO: Return the chain and its current length
+        'message': 'hello'
     }
     return jsonify(response), 200
 
